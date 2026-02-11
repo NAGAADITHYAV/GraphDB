@@ -1,28 +1,32 @@
-Creatign a Custom GraphDB in Go lang
+Creatign a Custom GraphDB in python
 
 ### TARGETS
 
 ### Write targets
+
     storage of uniqe stings (Name of nodes in the Graph)
     storage of connections between the strings(edges in the Graph)
 
 ### Read targets
+
     Quickly lookup for the string (node lookup)
     Quickly find paths between a given source  and destination node.
 
 ### Architecture(v0.0)
+
     Storage will have pages of size 5MB each,
     Maximum pages allowed in Memory is 100 pages.
 
 ### Page Design
+
     +---------------------------------------------------+
     | Page Header (64 bytes)                            |
     +---------------------------------------------------+
     | Payload (NodeMeta records / BTree / adjacency)    |
     +---------------------------------------------------+
 
-### page Header 
-      
+### page Header
+
       Offset  Size  Field
       ---------------------------------------------------------
       0       4     MagicNumber        uint32
